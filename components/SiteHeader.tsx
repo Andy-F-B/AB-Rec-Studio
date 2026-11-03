@@ -3,11 +3,12 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+import { UpcomingBadge } from "@/components/FestivalStatus";
 import { isActive, navItems } from "@/lib/nav";
 
-type Props = { studioName: string };
+type Props = { studioName: string; festivalDates: { startDate: string; endDate?: string } };
 
-export default function SiteHeader({ studioName }: Props) {
+export default function SiteHeader({ studioName, festivalDates }: Props) {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
 
@@ -32,6 +33,7 @@ export default function SiteHeader({ studioName }: Props) {
                     }`}
                   >
                     {item.label}
+                    {item.href === "/festival" && <UpcomingBadge {...festivalDates} />}
                   </Link>
                 </li>
               );
@@ -69,6 +71,7 @@ export default function SiteHeader({ studioName }: Props) {
                     }`}
                   >
                     {item.label}
+                    {item.href === "/festival" && <UpcomingBadge {...festivalDates} />}
                   </Link>
                 </li>
               );

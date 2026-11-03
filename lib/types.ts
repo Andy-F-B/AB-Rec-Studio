@@ -20,7 +20,8 @@ export type WorkType = "recording" | "mixing" | "mastering" | "production";
 export type MusicianCredit = {
   title: string;
   year?: number;
-  workType: WorkType;
+  workType?: WorkType;
+  status?: "upcoming";
   link?: string;
 };
 
@@ -44,6 +45,8 @@ export type Musician = {
 export type AboutSection = {
   id: string;
   title: string;
+  /** Small line under the title, e.g. roles. */
+  subtitle?: string;
   body: string;
   image?: string;
 };
@@ -72,4 +75,13 @@ export type Festival = {
   timeZone: string;
   faq: { q: string; a: string }[];
   lineup: LineupSlot[];
+};
+
+export type Release = {
+  title: string;
+  artist: string;
+  /** Musician slug, to link to their profile. */
+  musicianSlug?: string;
+  status: "upcoming" | "recent";
+  link?: string;
 };

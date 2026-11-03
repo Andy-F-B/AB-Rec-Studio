@@ -2,8 +2,9 @@
 import { aboutSections } from "@/content/about";
 import { festival } from "@/content/festival";
 import { musicians } from "@/content/musicians";
+import { releases } from "@/content/releases";
 import { studio } from "@/content/studio";
-import type { AboutSection, Festival, LineupSlot, Musician, StudioInfo } from "@/lib/types";
+import type { AboutSection, Festival, LineupSlot, Musician, Release, StudioInfo } from "@/lib/types";
 
 if (process.env.NODE_ENV !== "production") {
   const slugs = musicians.map((m) => m.slug);
@@ -95,4 +96,16 @@ export function formatSlotTime(slot: LineupSlot, timeZone: string = festival.tim
 
 export function mapsHref(query: string): string {
   return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`;
+}
+
+export function listReleases(status?: Release["status"]): Release[] {
+  return status ? releases.filter((r) => r.status === status) : releases;
+}
+
+/** Two-letter monogram for artists without a photo: "Kenny Broc" → "KB", "CEONEO" → "CE", "Benzen & Binau" → "BB". */
+export function monogram(name: string): string {
+  const words = name.split(/\s+/).filter((w) => /^[\p{L}\p{N}]/u.test(w));
+  if (words.length === 0) return "";
+  if (words.length === 1) return words[0].slice(0, 2).toUpperCase();
+  return (words[0][0] + words[1][0]).toUpperCase();
 }
