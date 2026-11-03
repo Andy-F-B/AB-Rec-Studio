@@ -19,3 +19,5 @@
 [2026-11-02 03:58] *dev* !sdk|003| <auditPhase> — full audit; report at [root/dev-output/audit-2026-11-02.md]: 2 high, 3 medium, 4 low; no security blockers
 [2026-11-02 04:05] audit fixes applied (error page, timezone, HSTS, FAQ to content, icon/OG image, removed unused dep); content preview guide at [root/UI/content-needed.html]
 [2026-11-03 02:05] real content added: studio overview, Alan & Andy bios, church & gear (Background); 8 artists + releases (Musicians, Home); Backyard Music Festival at the Oasis, Nov 21 2026 (Festival)
+[2026-11-03 03:27] logo added: header mark, home hero, footer; favicon/app icon/apple icon/social image from [root/dev-output/AB RECORDING STUDIO.svg]
+[2026-11-03 03:55] home/menu rework: Musicians→Projects (/projects, old URLs redirect); Background summarised on home, tab hidden; Contact hidden; "Festival at the Oasis" highlighted in menu; Upcoming cards (releases, concerts) via [root/content/upcoming.ts]

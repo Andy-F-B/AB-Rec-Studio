@@ -31,7 +31,7 @@ export default function MusicianBrowser({ musicians }: { musicians: Musician[] }
                 type="button"
                 aria-pressed={on}
                 onClick={() => select(g)}
-                className={`rounded-full border px-4 py-1.5 text-sm font-medium transition-colors ${
+                className={` border px-4 py-1.5 text-sm font-medium transition-colors ${
                   on ? "border-accent bg-accent text-bg" : "border-line text-muted hover:text-fg"
                 }`}
               >

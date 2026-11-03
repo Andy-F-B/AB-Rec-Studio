@@ -85,3 +85,18 @@ export type Release = {
   status: "upcoming" | "recent";
   link?: string;
 };
+
+/** A card in the home page "Upcoming" row: a release, a concert, anything coming up. */
+export type UpcomingItem = {
+  title: string;
+  /** Shown as a small label, e.g. "Release", "Concert". */
+  kind: string;
+  artist?: string;
+  /** Date as YYYY-MM-DD. Items with a past date are hidden at build time. */
+  date?: string;
+  place?: string;
+  /** Square image, e.g. /images/upcoming/<file>.jpg */
+  image?: string;
+  /** Where the card links: an internal path ("/festival") or a full URL. */
+  href?: string;
+};

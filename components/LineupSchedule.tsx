@@ -4,7 +4,7 @@ import type { LineupSlot } from "@/lib/types";
 
 export default function LineupSchedule({ lineup }: { lineup: LineupSlot[] }) {
   if (lineup.length === 0) {
-    return <p className="rounded-xl border border-dashed border-line p-8 text-center text-muted">Lineup coming soon.</p>;
+    return <p className="border border-dashed border-line p-8 text-center text-muted">Lineup coming soon.</p>;
   }
   const groups = groupLineup(lineup);
   return (
@@ -16,13 +16,13 @@ export default function LineupSchedule({ lineup }: { lineup: LineupSlot[] }) {
             {g.stages.map((st) => (
               <div key={st.stage || "main"}>
                 {st.stage && <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-muted">{st.stage}</p>}
-                <ul className="divide-y divide-line rounded-xl border border-line">
+                <ul className="divide-y divide-line border border-line">
                   {st.slots.map((slot) => {
                     const time = formatSlotTime(slot);
                     return (
                       <li key={`${slot.artistName}-${slot.order}`} className="flex items-baseline justify-between gap-4 px-4 py-3">
                         {slot.musicianSlug ? (
-                          <Link href={`/musicians/${slot.musicianSlug}`} className="font-medium hover:text-accent">
+                          <Link href={`/projects/${slot.musicianSlug}`} className="font-medium hover:text-accent">
                             {slot.artistName}
                           </Link>
                         ) : (

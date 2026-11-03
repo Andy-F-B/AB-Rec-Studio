@@ -33,7 +33,7 @@ export function UpcomingBadge({ startDate, endDate }: Dates) {
   const phase = useFestivalPhase(startDate, endDate);
   if (phase?.kind !== "upcoming") return null;
   return (
-    <span className="ml-1.5 rounded-full bg-accent/20 px-1.5 py-0.5 align-middle text-[10px] font-bold uppercase tracking-wide text-accent">
+    <span className="ml-1.5 bg-accent/20 px-1.5 py-0.5 align-middle text-[10px] font-bold uppercase tracking-wide text-accent">
       Soon
     </span>
   );

@@ -6,8 +6,8 @@ import type { Musician } from "@/lib/types";
 export default function MusicianCard({ musician }: { musician: Musician }) {
   return (
     <Link
-      href={`/musicians/${musician.slug}`}
-      className="group block overflow-hidden rounded-xl border border-line bg-surface transition-colors hover:border-accent"
+      href={`/projects/${musician.slug}`}
+      className="group block overflow-hidden border border-line bg-surface transition-colors hover:border-accent"
     >
       <div className="relative aspect-square bg-line">
         {musician.image ? (

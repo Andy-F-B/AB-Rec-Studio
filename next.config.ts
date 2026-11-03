@@ -27,6 +27,15 @@ const securityHeaders = [
 
 const nextConfig: NextConfig = {
   poweredByHeader: false,
+  async redirects() {
+    return [
+      { source: "/musicians", destination: "/projects", permanent: true },
+      { source: "/musicians/:slug", destination: "/projects/:slug", permanent: true },
+      // Hidden for now: Background is summarised on the home page, Contact is off. Content is kept in /content.
+      { source: "/background", destination: "/#background", permanent: false },
+      { source: "/contact", destination: "/", permanent: false },
+    ];
+  },
   async headers() {
     return [{ source: "/:path*", headers: securityHeaders }];
   },

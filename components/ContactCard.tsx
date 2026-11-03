@@ -17,12 +17,12 @@ export default function ContactCard({ studio }: { studio: StudioInfo }) {
 
   return (
     <div className="grid gap-6 tablet:grid-cols-[3fr_2fr]">
-      <div className="rounded-2xl border border-line bg-surface p-6 tablet:p-10">
+      <div className="border border-line bg-surface p-6 tablet:p-10">
         <h2 className="text-xl font-bold">Email the studio</h2>
         <p className="mt-2 text-muted">We read every message and usually reply within a couple of days.</p>
         <a
           href={mailtoHref("Studio inquiry")}
-          className="mt-6 inline-block rounded-lg bg-accent px-6 py-3 text-lg font-semibold text-bg hover:opacity-90"
+          className="mt-6 inline-block bg-accent px-6 py-3 text-lg font-semibold text-bg hover:opacity-90"
         >
           Email us
         </a>
@@ -39,7 +39,7 @@ export default function ContactCard({ studio }: { studio: StudioInfo }) {
             <li key={s}>
               <a
                 href={mailtoHref(s)}
-                className="inline-block rounded-full border border-line px-4 py-1.5 text-sm font-medium hover:border-accent hover:text-accent"
+                className="inline-block border border-line px-4 py-1.5 text-sm font-medium hover:border-accent hover:text-accent"
               >
                 {s}
               </a>
@@ -50,13 +50,13 @@ export default function ContactCard({ studio }: { studio: StudioInfo }) {
 
       <div className="space-y-6">
         {studio.address && (
-          <div className="rounded-2xl border border-line p-6">
+          <div className="border border-line p-6">
             <h2 className="text-sm font-semibold uppercase tracking-widest text-muted">Studio</h2>
             <p className="mt-2 whitespace-pre-line">{studio.address}</p>
           </div>
         )}
         {socials.length > 0 && (
-          <div className="rounded-2xl border border-line p-6">
+          <div className="border border-line p-6">
             <h2 className="text-sm font-semibold uppercase tracking-widest text-muted">Follow</h2>
             <ul className="mt-3 flex flex-wrap gap-4">
               {socials.map((s) => (

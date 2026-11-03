@@ -31,7 +31,7 @@ export default function AboutSection({ section, flip = false }: Props) {
       id={section.id}
       className="grid scroll-mt-24 items-center gap-8 tablet:grid-cols-2 tablet:gap-12"
     >
-      <div className={`relative aspect-[4/3] overflow-hidden rounded-2xl border border-line bg-surface ${flip ? "tablet:order-2" : ""}`}>
+      <div className={`relative aspect-[4/3] overflow-hidden border border-line bg-surface ${flip ? "tablet:order-2" : ""}`}>
         <Image
           src={section.image}
           alt={section.title}

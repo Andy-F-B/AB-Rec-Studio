@@ -4,7 +4,7 @@ import type { Musician } from "@/lib/types";
 export default function MusicianGrid({ musicians }: { musicians: Musician[] }) {
   if (musicians.length === 0) {
     return (
-      <p className="rounded-xl border border-dashed border-line p-8 text-center text-muted">No musicians yet.</p>
+      <p className="border border-dashed border-line p-8 text-center text-muted">No musicians yet.</p>
     );
   }
   return (

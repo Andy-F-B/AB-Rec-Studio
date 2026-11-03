@@ -1,15 +1,19 @@
 @import "tailwindcss";
 
-/* Dark studio theme. Breakpoints from sdk-web: mobile 600, tablet 1024, laptop 1440, desktop 1920. */
+/* Light beach theme. Breakpoints from sdk-web: mobile 600, tablet 1024, laptop 1440, desktop 1920. */
 @theme {
-  --color-bg: #0b0b0d;
-  --color-surface: #17171b;
-  --color-line: #2a2a31;
-  --color-fg: #f4f4f5;
-  --color-muted: #a1a1aa;
-  --color-accent: #f5a524;
+  --color-bg: #ffffff;
+  --color-surface: #effafc;
+  --color-line: #d5e6eb;
+  --color-fg: #0f1f2b;
+  --color-muted: #50616e;
+  --color-accent: #0e7490;
+  --color-accent-bright: #22d3ee;
+  --color-sand: #fbf6ec;
 
-  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-fraunces), ui-serif, Georgia, serif;
+  --font-logo: var(--font-pacifico), cursive;
 
   --breakpoint-mobile: 600px;
   --breakpoint-tablet: 1024px;
@@ -18,13 +22,23 @@
 }
 
 html {
-  color-scheme: dark;
+  color-scheme: light;
 }
 
 body {
   background: var(--color-bg);
   color: var(--color-fg);
   font-size: 14px;
+}
+
+@layer base {
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
 }
 
 @media (min-width: 600px) {

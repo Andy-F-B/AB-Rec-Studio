@@ -4,7 +4,8 @@ import { festival } from "@/content/festival";
 import { musicians } from "@/content/musicians";
 import { releases } from "@/content/releases";
 import { studio } from "@/content/studio";
-import type { AboutSection, Festival, LineupSlot, Musician, Release, StudioInfo } from "@/lib/types";
+import type { AboutSection, Festival, LineupSlot, Musician, Release, StudioInfo, UpcomingItem } from "@/lib/types";
+import { upcoming } from "@/content/upcoming";
 
 if (process.env.NODE_ENV !== "production") {
   const slugs = musicians.map((m) => m.slug);
@@ -108,4 +109,24 @@ export function monogram(name: string): string {
   if (words.length === 0) return "";
   if (words.length === 1) return words[0].slice(0, 2).toUpperCase();
   return (words[0][0] + words[1][0]).toUpperCase();
+}
+
+/** Upcoming items, soonest dated first; items whose date has passed are left out. */
+export function listUpcoming(now: Date = new Date()): UpcomingItem[] {
+  const today = now.toISOString().slice(0, 10);
+  return upcoming
+    .filter((u) => !u.date || u.date >= today)
+    .map((u, i) => ({ u, i }))
+    .sort((a, b) => (a.u.date && b.u.date ? a.u.date.localeCompare(b.u.date) : a.i - b.i))
+    .map(({ u }) => u);
+}
+
+/** "2026-11-21" → "Nov 21, 2026" */
+export function formatDay(date: string): string {
+  return new Date(`${date}T12:00:00Z`).toLocaleDateString("en-US", {
+    month: "short",
+    day: "numeric",
+    year: "numeric",
+    timeZone: "UTC",
+  });
 }

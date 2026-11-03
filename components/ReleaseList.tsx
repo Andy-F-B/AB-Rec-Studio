@@ -14,7 +14,7 @@ function ReleaseRow({ r }: { r: Release }) {
     <li className="flex flex-wrap items-baseline justify-between gap-2 px-4 py-3">
       <span className="font-semibold">{title}</span>
       {r.musicianSlug ? (
-        <Link href={`/musicians/${r.musicianSlug}`} className="text-sm text-muted hover:text-accent">
+        <Link href={`/projects/${r.musicianSlug}`} className="text-sm text-muted hover:text-accent">
           {r.artist}
         </Link>
       ) : (
@@ -39,7 +39,7 @@ export default function ReleaseList({ compact = false }: { compact?: boolean }) 
         {groups.map((g) => (
           <div key={g.label}>
             <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-muted">{g.label}</p>
-            <ul className="divide-y divide-line rounded-xl border border-line">
+            <ul className="divide-y divide-line border border-line">
               {g.items.map((r) => (
                 <ReleaseRow key={`${r.artist}-${r.title}`} r={r} />
               ))}

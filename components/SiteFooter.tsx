@@ -1,5 +1,5 @@
+import Image from "next/image";
 import type { StudioInfo } from "@/lib/types";
-import { mailtoHref } from "@/lib/content";
 
 type Props = { studio: StudioInfo };
 
@@ -16,17 +16,12 @@ export default function SiteFooter({ studio }: Props) {
     .map((key) => ({ key, label: socialLabels[key], href: studio.socials[key] as string }));
 
   return (
-    <footer className="mt-24 border-t border-line">
-      <div className="mx-auto grid max-w-6xl gap-8 px-4 py-10 text-sm text-muted tablet:grid-cols-3 tablet:px-6">
+    <footer className="mt-24 border-t border-line bg-sand">
+      <div className="mx-auto grid max-w-6xl gap-8 px-4 py-10 text-sm text-muted tablet:grid-cols-2 tablet:px-6">
         <div>
+          <Image src="/brand/logo.svg" alt={`${studio.name} logo`} width={120} height={120} className="mb-3" />
           <p className="font-semibold text-fg">{studio.name}</p>
           {studio.address && <p className="mt-2 whitespace-pre-line">{studio.address}</p>}
-        </div>
-        <div>
-          <p className="font-semibold text-fg">Contact</p>
-          <a href={mailtoHref()} className="mt-2 inline-block hover:text-accent">
-            {studio.email}
-          </a>
         </div>
         {socials.length > 0 && (
           <div>

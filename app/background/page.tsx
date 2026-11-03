@@ -27,7 +27,7 @@ export default function BackgroundPage() {
               <li key={s.id}>
                 <a
                   href={`#${s.id}`}
-                  className="inline-block rounded-full border border-line px-4 py-1.5 text-sm font-medium text-muted hover:border-accent hover:text-fg"
+                  className="inline-block border border-line px-4 py-1.5 text-sm font-medium text-muted hover:border-accent hover:text-fg"
                 >
                   {s.title}
                 </a>
@@ -45,7 +45,7 @@ export default function BackgroundPage() {
           })}
         </div>
       ) : (
-        <p className="mt-14 rounded-xl border border-dashed border-line p-8 text-center text-muted">
+        <p className="mt-14 border border-dashed border-line p-8 text-center text-muted">
           Our story is coming soon.
         </p>
       )}

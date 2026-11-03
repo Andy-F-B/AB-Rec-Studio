@@ -8,7 +8,7 @@ import { formatFestivalDates, getFestival, mailtoHref, mapsHref } from "@/lib/co
 const festival = getFestival();
 
 export const metadata: Metadata = {
-  title: "Festival",
+  title: "Festival at the Oasis",
   description: `${festival.name}: ${formatFestivalDates(festival)}. Free entry.`,
 };
 
@@ -18,14 +18,14 @@ export default function FestivalPage() {
   return (
     <div className="py-12">
       {/* Hero */}
-      <section className="relative overflow-hidden rounded-2xl border border-line bg-surface">
+      <section className="relative overflow-hidden border border-line bg-surface">
         {festival.heroImage && (
           <Image src={festival.heroImage} alt="" fill priority sizes="100vw" className="object-cover opacity-30" />
         )}
         <div className="relative p-6 mobile:p-10 tablet:p-16">
           <div className="flex flex-wrap items-center gap-3">
             <p className="text-sm font-semibold uppercase tracking-widest text-accent">Music festival</p>
-            <span className="rounded-full bg-accent px-3 py-1 text-xs font-bold uppercase tracking-wide text-bg">Free entry</span>
+            <span className="bg-accent px-3 py-1 text-xs font-bold uppercase tracking-wide text-bg">Free entry</span>
           </div>
           <h1 className="mt-4 text-4xl font-bold tracking-tight tablet:text-6xl">{festival.name}</h1>
           {festival.tagline && <p className="mt-4 max-w-2xl text-lg text-muted">{festival.tagline}</p>}
@@ -47,7 +47,7 @@ export default function FestivalPage() {
             ))}
           </div>
         </div>
-        <div className="rounded-xl border border-line bg-surface p-6">
+        <div className="border border-line bg-surface p-6">
           <h2 className="text-sm font-semibold uppercase tracking-widest text-muted">Venue</h2>
           <p className="mt-2 text-lg font-semibold">{festival.venueName}</p>
           {festival.venueAddress && <p className="mt-1 whitespace-pre-line text-muted">{festival.venueAddress}</p>}

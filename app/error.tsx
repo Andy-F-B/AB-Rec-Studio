@@ -12,11 +12,11 @@ export default function ErrorPage({ reset }: { error: Error & { digest?: string 
         <button
           type="button"
           onClick={reset}
-          className="rounded-lg bg-accent px-5 py-3 font-semibold text-bg hover:opacity-90"
+          className="bg-accent px-5 py-3 font-semibold text-bg hover:opacity-90"
         >
           Try again
         </button>
-        <Link href="/" className="rounded-lg border border-line px-5 py-3 font-semibold hover:border-accent">
+        <Link href="/" className="border border-line px-5 py-3 font-semibold hover:border-accent">
           Back to home
         </Link>
       </div>
