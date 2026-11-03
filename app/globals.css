@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+/* Dark studio theme. Breakpoints from sdk-web: mobile 600, tablet 1024, laptop 1440, desktop 1920. */
+@theme {
+  --color-bg: #0b0b0d;
+  --color-surface: #17171b;
+  --color-line: #2a2a31;
+  --color-fg: #f4f4f5;
+  --color-muted: #a1a1aa;
+  --color-accent: #f5a524;
+
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+
+  --breakpoint-mobile: 600px;
+  --breakpoint-tablet: 1024px;
+  --breakpoint-laptop: 1440px;
+  --breakpoint-desktop: 1920px;
+}
+
+html {
+  color-scheme: dark;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-fg);
+  font-size: 14px;
+}
+
+@media (min-width: 600px) {
+  body { font-size: 16px; }
+}
+
+@media (min-width: 1440px) {
+  body { font-size: 18px; }
+}

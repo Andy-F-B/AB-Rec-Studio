@@ -1,0 +1,21 @@
+// master_changelog.br — action log
+// auto-written by AI on every script execution unless no-log is active.
+// format: [timestamp] action — one line per entry.
+// detailed entries created by *sf* <log>.
+// do not manually edit past entries.
+
+[log]
+// entries written below this line
+[2026-11-02 03:02] *dev* !sdk|003| <help> — help session: how to start the studio website; logged to help-log.md
+[2026-11-02 03:05] *dev* !sdk|003| <specPhase> — generated 12 spec files in [root/ai/] for studio website; created [root/ai/context/]
+[2026-11-02 03:09] *dev* !sdk|003| <specPhase> — specs updated for hard-coded v1 (no db/admin), mailto contact, free festival
+[2026-11-02 03:09] *dev* !sdk|003| <anchorPhase> — generated 4 context anchors in [root/ai/context/]
+[2026-11-02 03:12] *dev* !sdk|003| <taskPhase> "all" — created 6 task files in [root/ai/tasks/] (0001–0006)
+[2026-11-02 03:24] *dev* !sdk|003| <buildPhase> "next" — built task_0001 foundation (Next.js 16 app at [root], layout, header/footer, content types, security headers)
+[2026-11-02 03:31] *dev* !sdk|003| <buildPhase> "next" — built task_0002 home page (hero, featured musicians, festival teaser + countdown, about teaser); placeholder content in [root/content/]
+[2026-11-02 03:38] !sdk|003| <buildPhase> "next" — built task_0003 musicians tab (grid, genre filter, profile pages)
+[2026-11-02 03:42] !sdk|003| <buildPhase> "next" — built task_0004 background tab
+[2026-11-02 03:50] !sdk|003| <buildPhase> "All pending pases" — built task_0005 festival tab and task_0006 contact tab; all 6 tasks done
+[2026-11-02 03:58] *dev* !sdk|003| <auditPhase> — full audit; report at [root/dev-output/audit-2026-11-02.md]: 2 high, 3 medium, 4 low; no security blockers
+[2026-11-02 04:05] audit fixes applied (error page, timezone, HSTS, FAQ to content, icon/OG image, removed unused dep); content preview guide at [root/UI/content-needed.html]
+[2026-11-03 02:05] real content added: studio overview, Alan & Andy bios, church & gear (Background); 8 artists + releases (Musicians, Home); Backyard Music Festival at the Oasis, Nov 21 2026 (Festival)
