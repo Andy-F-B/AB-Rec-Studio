@@ -14,6 +14,7 @@
   --font-sans: var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif;
   --font-display: var(--font-fraunces), ui-serif, Georgia, serif;
   --font-logo: var(--font-pacifico), cursive;
+  --font-hand: var(--font-caveat), cursive;
 
   --breakpoint-mobile: 600px;
   --breakpoint-tablet: 1024px;
@@ -47,4 +48,40 @@ body {
 
 @media (min-width: 1440px) {
   body { font-size: 18px; }
+}
+
+/* Hover: clickable things grow slightly. Unlayered on purpose so it wins over
+   transition-colors utilities and every link/button animates the same way. */
+a,
+button {
+  transition:
+    transform 200ms ease,
+    box-shadow 200ms ease,
+    color 150ms ease,
+    background-color 150ms ease,
+    border-color 150ms ease,
+    opacity 150ms ease;
+}
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  a:hover,
+  button:hover {
+    transform: scale(1.04);
+  }
+  /* Cards (projects, upcoming) grow a little less and lift. */
+  .card-link {
+    position: relative;
+  }
+  .card-link:hover {
+    transform: scale(1.03);
+    z-index: 1;
+    box-shadow: 0 12px 28px -14px rgb(15 31 43 / 0.45);
+  }
+}
+
+/* Transforms don't apply to inline boxes, so links outside running text are
+   inline-block (in base, so block/flex utilities still win). */
+@layer base {
+  a:not(p a) {
+    display: inline-block;
+  }
 }

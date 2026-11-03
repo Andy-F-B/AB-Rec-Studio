@@ -28,7 +28,7 @@ export default function FestivalPage() {
             <span className="bg-accent px-3 py-1 text-xs font-bold uppercase tracking-wide text-bg">Free entry</span>
           </div>
           <h1 className="mt-4 text-4xl font-bold tracking-tight tablet:text-6xl">{festival.name}</h1>
-          {festival.tagline && <p className="mt-4 max-w-2xl text-lg text-muted">{festival.tagline}</p>}
+          {festival.tagline && <p className="mt-3 font-hand text-4xl text-accent">{festival.tagline}</p>}
           <p className="mt-6 text-xl font-semibold">{formatFestivalDates(festival)}</p>
           <div className="mt-2">
             <Countdown startDate={festival.startDate} endDate={festival.endDate} endedText="Thanks for coming! See you next year." />
@@ -61,6 +61,17 @@ export default function FestivalPage() {
           </a>
         </div>
       </section>
+
+      {/* Photos from past festivals */}
+      {festival.photos && festival.photos.length > 0 && (
+        <section aria-label="Photos" className="mt-16 grid gap-4 mobile:grid-cols-2">
+          {festival.photos.map((ph) => (
+            <div key={ph.src} className="relative aspect-[4/3] overflow-hidden border border-line">
+              <Image src={ph.src} alt={ph.alt} fill sizes="(min-width: 600px) 50vw, 100vw" className="object-cover" />
+            </div>
+          ))}
+        </section>
+      )}
 
       {/* Lineup */}
       <section aria-labelledby="lineup-heading" className="mt-16">

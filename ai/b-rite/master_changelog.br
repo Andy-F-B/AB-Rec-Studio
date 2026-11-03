@@ -21,3 +21,4 @@
 [2026-11-03 02:05] real content added: studio overview, Alan & Andy bios, church & gear (Background); 8 artists + releases (Musicians, Home); Backyard Music Festival at the Oasis, Nov 21 2026 (Festival)
 [2026-11-03 03:27] logo added: header mark, home hero, footer; favicon/app icon/apple icon/social image from [root/dev-output/AB RECORDING STUDIO.svg]
 [2026-11-03 03:55] home/menu rework: Musicians→Projects (/projects, old URLs redirect); Background summarised on home, tab hidden; Contact hidden; "Festival at the Oasis" highlighted in menu; Upcoming cards (releases, concerts) via [root/content/upcoming.ts]
+[2026-11-03 04:22] photos (B&W + vignette) on profiles, Upcoming, festival and home background; Upcoming = CEONEO & Benzen & Binau live Nov 14 + Backyard fest; handwritten festival tagline (Caveat); white footer; new header icon; hover grow on links/cards

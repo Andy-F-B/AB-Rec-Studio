@@ -7,7 +7,7 @@ export default function MusicianCard({ musician }: { musician: Musician }) {
   return (
     <Link
       href={`/projects/${musician.slug}`}
-      className="group block overflow-hidden border border-line bg-surface transition-colors hover:border-accent"
+      className="card-link group block overflow-hidden border border-line bg-surface hover:border-accent"
     >
       <div className="relative aspect-square bg-line">
         {musician.image ? (

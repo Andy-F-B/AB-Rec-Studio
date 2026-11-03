@@ -45,7 +45,7 @@ export default function UpcomingCard({ item }: { item: UpcomingItem }) {
       </div>
     </>
   );
-  const cls = "group block h-full overflow-hidden border border-line bg-surface transition-colors hover:border-accent";
+  const cls = "card-link group block h-full overflow-hidden border border-line bg-surface hover:border-accent";
 
   if (!item.href) return <div className={cls}>{body}</div>;
   if (/^https?:\/\//.test(item.href)) {

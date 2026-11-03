@@ -71,6 +71,8 @@ export type Festival = {
   admission: "free";
   rsvpNote?: string;
   heroImage?: string;
+  /** Photos from past festivals, shown on the festival page and home teaser. */
+  photos?: { src: string; alt: string; width: number; height: number }[];
   /** IANA time zone the festival runs in, e.g. "America/New_York". Used to show lineup times. */
   timeZone: string;
   faq: { q: string; a: string }[];

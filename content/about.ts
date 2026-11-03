@@ -4,6 +4,7 @@ import type { AboutSection } from "@/lib/types";
 export const aboutSections: AboutSection[] = [
   {
     id: "our-story",
+    image: "/images/about/alan-lfo.jpg",
     title: "Our story",
     body: `AB Recording Studio is an Orlando, Florida recording studio run by father-and-son team Alan and Andy Binau — two producers, engineers and working musicians with decades of experience on stage, in the studio and in the church. From songwriting and arrangement to tracking, mixing and live sound, AB brings a touring musician's ear and a producer's attention to detail to every project.
 
@@ -11,6 +12,7 @@ The name says who we are: AB stands for Alan & Andy Binau.`,
   },
   {
     id: "alan-binau",
+    image: "/images/about/alan.jpg",
     title: "Alan Binau",
     subtitle: "Lead Producer · Audio Engineer · Musician",
     body: `Born in Copenhagen, Denmark, Alan Binau picked up his first guitar at 15 and has been writing, playing and producing music ever since. He came up through the Copenhagen band scene, first with "Gypsy" and later with "Grumpy," playing hundreds of gigs through the 1990s. In 2000 and 2002 he composed and recorded the music for two ballets, Ghosts and Ocean.
@@ -25,6 +27,7 @@ Instruments: vocals and guitar primarily; he has also recorded bass, keyboards, 
   },
   {
     id: "andy-binau",
+    image: "/images/about/andy.jpg",
     title: "Andy Binau",
     subtitle: "Producer · Musician · Multi-instrumentalist",
     body: `Andy Binau has been playing music since he was very young, starting out in jazz band and branching into just about every style and genre since. A true multi-instrumentalist, he covers guitar (acoustic and electric), bass, drums, keys, percussion, vocals and harmonica.

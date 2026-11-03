@@ -20,6 +20,10 @@ export const festival: Festival = {
       a: "The Oasis, a community ministry of Ocoee Oaks United Methodist Church.",
     },
   ],
+  photos: [
+    { src: "/images/festival/backyard-band.jpg", alt: "A band playing under the tent at the Backyard Music Festival", width: 1200, height: 1019 },
+    { src: "/images/festival/backyard-trumpet.jpg", alt: "Trumpet solo at the Backyard Music Festival", width: 911, height: 1200 },
+  ],
   // `stage` is used to group the lineup.
   lineup: [
     { artistName: "CEONEO", musicianSlug: "ceoneo", stage: "Returning", order: 1 },

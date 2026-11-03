@@ -6,6 +6,7 @@ import type { Musician } from "@/lib/types";
 export const musicians: Musician[] = [
   {
     slug: "ceoneo",
+    image: "/images/musicians/ceoneo.jpg",
     name: "CEONEO",
     genre: "Rock",
     shortBio: "Danish-American rock band led by Alan Binau.",
@@ -16,6 +17,7 @@ export const musicians: Musician[] = [
   },
   {
     slug: "benzen-and-binau",
+    image: "/images/musicians/benzen-and-binau.jpg",
     name: "Benzen & Binau",
     genre: "Power Pop",
     shortBio: "Retro power-pop duo with a 60s sound.",
@@ -36,6 +38,7 @@ export const musicians: Musician[] = [
   },
   {
     slug: "gravis-pars",
+    image: "/images/musicians/gravis-pars.jpg",
     name: "Gravis Pars",
     genre: "Alternative",
     shortBio: "Alternative / psychedelic pop-rock, fronted by Andy Binau.",
@@ -76,6 +79,7 @@ export const musicians: Musician[] = [
   },
   {
     slug: "alan-binau",
+    image: "/images/musicians/alan-binau.jpg",
     name: "Alan Binau",
     shortBio: "Solo releases from AB's lead producer.",
     bio: "Solo releases from Alan Binau, lead producer at AB Recording Studio. Read his full story on the Background page.",

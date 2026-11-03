@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { DM_Sans, Fraunces, Pacifico } from "next/font/google";
+import { Caveat, DM_Sans, Fraunces, Pacifico } from "next/font/google";
 import SiteFooter from "@/components/SiteFooter";
 import SiteHeader from "@/components/SiteHeader";
 import { getStudio } from "@/lib/content";
@@ -7,6 +7,7 @@ import "./globals.css";
 
 const dmSans = DM_Sans({ variable: "--font-dm-sans", subsets: ["latin"] });
 const fraunces = Fraunces({ variable: "--font-fraunces", subsets: ["latin"] });
+const caveat = Caveat({ variable: "--font-caveat", subsets: ["latin"], weight: "600" });
 const pacifico = Pacifico({ variable: "--font-pacifico", subsets: ["latin"], weight: "400" });
 
 const studio = getStudio();
@@ -21,7 +22,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${dmSans.variable} ${fraunces.variable} ${pacifico.variable}`}>
+    <html lang="en" className={`${dmSans.variable} ${fraunces.variable} ${pacifico.variable} ${caveat.variable}`}>
       <body className="font-sans antialiased">
         <a href="#main" className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:bg-accent focus:px-3 focus:py-2 focus:text-bg">
           Skip to content
