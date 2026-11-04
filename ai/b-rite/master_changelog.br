@@ -25,3 +25,8 @@
 [2026-11-04 04:30] Gravis Pars: wordmark on profile, upcoming album cover as profile image + Upcoming card
 [2026-11-04 04:50] organic festival buttons; "Our story" in logo font; Alan/Andy cards restyled; Projects: New Releases with covers; festival page: Free Entry stamp, new about/FAQ text, venue box removed, lineup poster spot
 [2026-11-04 04:58] project photos (Kenny Broc, Brad Fischetti, Marcos Rosset); added LFO, Band of Angels, Leo Von, Byorn Gold, Harold Lima, Shelley Hicks; Alan bio updated
+[2026-11-04 05:00] Projects: removed LFO, Band of Angels, Harold Lima; added Leo Von + Shelley Hicks photos
+[2026-11-04 05:10] artist profiles: photo slideshow (arrows bottom-right, auto every 5s), genre moved under name, festival badge removed, stylized Releases cards (date, Spotify placeholder); Projects New Releases uses same cards
+[2026-11-04 05:25] research: ai/research/album-releases.md (albums + streaming links per project artist, for later site update)
+[2026-11-04 06:25] profiles: added researched albums (CEONEO 4, Benzen & Binau 2, Byorn Gold 4 w/ Spotify, Alan Binau Farvel Danmark EP w/ Apple Music), artist links (website/Spotify/Instagram/YouTube/Apple Music), EP tag, Apple Music button
+[2026-11-04 06:35] festival: lineup poster added (SVG rendered to public/images/festival/lineup-poster-2026.jpg, 1440x1800; the 90MB SVG was too heavy for the web)

@@ -2,29 +2,48 @@ import type { Musician } from "@/lib/types";
 
 // Artists who've worked with AB Recording Studio and its producers (studio-wide credits).
 // Photos: put a square image in /public/images/musicians/<slug>.jpg and set `image`.
+// More photos: list them in `photos` and the profile shows a slideshow.
+// Releases: add releaseDate ("2025-03-14") and spotify to a credit when known.
+// Sources for the album data: ai/research/album-releases.md
 // Links: add website / spotify / instagram / youtube when available.
 export const musicians: Musician[] = [
   {
     slug: "ceoneo",
     image: "/images/musicians/ceoneo.jpg",
+    photos: ["/images/upcoming/ceoneo-live.jpg"],
     name: "CEONEO",
     genre: "Rock",
     shortBio: "Danish-American rock band led by Alan Binau.",
     bio: "Danish-American rock band founded by Alan Binau in Copenhagen in 2007, with multiple Denmark tours and a long run of releases. Andy Binau plays lead guitar and sings backing vocals, also contributing lead vocals, acoustic guitar and harmonica.\n\nCEONEO was named Band of the Year at the 2024 Celebration Festival. Alan and Andy are currently producing a new CEONEO album together.",
     featured: true,
-    links: {},
-    credits: [{ title: "Inspired by Brothers" }],
+    links: { website: "https://ceoneo-us.com" },
+    credits: [
+      { title: "No Slack!", releaseDate: "2026-06-09" },
+      { title: "Inspired by Brothers", releaseDate: "2026-05-27" },
+      { title: "Father's Sun", releaseDate: "2026-05-21" },
+      { title: "Tilbage i 70'erne", releaseDate: "2023", kind: "EP" },
+    ],
   },
   {
     slug: "benzen-and-binau",
     image: "/images/musicians/benzen-and-binau.jpg",
+    photos: ["/images/upcoming/benzen-and-binau-live.jpg"],
     name: "Benzen & Binau",
     genre: "Power Pop",
     shortBio: "Retro power-pop duo with a 60s sound.",
     bio: "Retro power-pop duo with a 60s sound.",
     featured: true,
-    links: {},
-    credits: [{ title: "Pigs on the Moon" }],
+    links: {
+      website: "https://benzenbinau.com",
+      spotify: "https://open.spotify.com/artist/2IffhwR5LideNJqA5ZfkOJ",
+      instagram: "https://www.instagram.com/benzenbinau/",
+      youtube: "https://www.youtube.com/@BenzenBinau",
+    },
+    credits: [
+      // Album links not found yet; buttons go to the band's Spotify page for now.
+      { title: "Pigs on the Moon", spotify: "https://open.spotify.com/artist/2IffhwR5LideNJqA5ZfkOJ" },
+      { title: "The jellyfish says hello", spotify: "https://open.spotify.com/artist/2IffhwR5LideNJqA5ZfkOJ" },
+    ],
   },
   {
     slug: "kenny-broc",
@@ -40,6 +59,7 @@ export const musicians: Musician[] = [
   {
     slug: "gravis-pars",
     image: "/images/musicians/gravis-pars-cover.jpg", // upcoming album cover, for now
+    photos: ["/images/musicians/gravis-pars.jpg"],
     logo: "/images/musicians/gravis-pars-logo.svg",
     name: "Gravis Pars",
     genre: "Alternative",
@@ -57,7 +77,7 @@ export const musicians: Musician[] = [
     shortBio: "Singer and founding member of LFO.",
     bio: "Singer and founding member of LFO. Alan Binau has recorded and produced with Brad and plays with LFO on tour.",
     featured: false,
-    links: {},
+    links: { appleMusic: "https://music.apple.com/gb/artist/brad-fischetti/306679247" },
     credits: [],
   },
   {
@@ -80,29 +100,11 @@ export const musicians: Musician[] = [
     bio: "Progressive rock artist (M Rosset). Recorded, mixed and produced with Alan Binau.",
     featured: false,
     links: {},
-    credits: [{ title: "Infilennium" }],
-  },
-  {
-    slug: "lfo",
-    name: "LFO",
-    genre: "Pop",
-    shortBio: "Pop group behind \"Summer Girls\" and \"Girl on TV\".",
-    bio: "American pop group known for \"Summer Girls,\" \"Girl on TV\" and \"Every Other Time.\" Alan Binau has toured with LFO since 2017 on acoustic guitar, percussion and backing vocals.",
-    featured: false,
-    links: {},
-    credits: [],
-  },
-  {
-    slug: "band-of-angels",
-    name: "Band of Angels",
-    shortBio: "Christian band from Celebration, FL.",
-    bio: "Christian band from Celebration, Florida. Alan Binau was a member for almost 10 years, playing bass and guitar.",
-    featured: false,
-    links: {},
-    credits: [],
+    credits: [{ title: "Infilennium", cover: "/images/musicians/marcos-rosset.jpg" }],
   },
   {
     slug: "leo-von",
+    image: "/images/musicians/leo-von.jpg",
     name: "Leo Von",
     shortBio: "Recorded and produced with Alan Binau.",
     bio: "Alan Binau has recorded, arranged, mixed and produced for Leo Von.",
@@ -116,20 +118,20 @@ export const musicians: Musician[] = [
     shortBio: "Recorded and produced with Alan Binau.",
     bio: "Alan Binau has recorded, arranged, mixed and produced for Byorn Gold.",
     featured: false,
-    links: {},
-    credits: [],
-  },
-  {
-    slug: "harold-lima",
-    name: "Harold Lima",
-    shortBio: "Recorded and produced with Alan Binau.",
-    bio: "Alan Binau has recorded, arranged, mixed and produced for Harold Lima.",
-    featured: false,
-    links: {},
-    credits: [],
+    links: {
+      instagram: "https://www.instagram.com/byorngold/",
+      youtube: "https://www.youtube.com/@ByornGoldOfficial",
+    },
+    credits: [
+      { title: "Ambrosia", releaseDate: "2025-09-24", spotify: "https://open.spotify.com/album/7m29dXGYVz8LdXbzSoezEQ" },
+      { title: "Borderlines (Stories, Part 1)", releaseDate: "2025-06-30", spotify: "https://open.spotify.com/album/0Szj3UCBS46ytgH5sYPK9p" },
+      { title: "Elody (For My Children, Part 01)", releaseDate: "2025-03-28", spotify: "https://open.spotify.com/album/3cd6nF8wdI8cs7OPmnQHy2" },
+      { title: "Styles", releaseDate: "2019-03-22", spotify: "https://open.spotify.com/album/249nLxK3Q3Q7pE1I25r9kO" },
+    ],
   },
   {
     slug: "shelley-hicks",
+    image: "/images/musicians/shelley-hicks.jpg",
     name: "Shelley Hicks",
     shortBio: "Recorded and produced with Alan Binau.",
     bio: "Alan Binau has recorded, arranged, mixed and produced for Shelley Hicks.",
@@ -140,11 +142,14 @@ export const musicians: Musician[] = [
   {
     slug: "alan-binau",
     image: "/images/musicians/alan-binau.jpg",
+    photos: ["/images/about/alan.jpg", "/images/about/alan-lfo.jpg"],
     name: "Alan Binau",
     shortBio: "Solo releases from AB's lead producer.",
     bio: "Solo releases from Alan Binau, lead producer at AB Recording Studio. Read his full story on the Background page.",
     featured: false,
-    links: {},
-    credits: [],
+    links: { website: "https://ceoneo-us.com/alan-binau" },
+    credits: [
+      { title: "Farvel Danmark", releaseDate: "2015-01-16", kind: "EP", cover: "/images/musicians/alan-binau.jpg", appleMusic: "https://music.apple.com/us/album/farvel-danmark-ep/955496758" },
+    ],
   },
 ];

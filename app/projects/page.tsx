@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import { Suspense } from "react";
 import MusicianBrowser from "@/components/MusicianBrowser";
 import MusicianGrid from "@/components/MusicianGrid";
-import ReleaseCard from "@/components/ReleaseCard";
-import { listMusicians, listReleases } from "@/lib/content";
+import ReleaseShowcase from "@/components/ReleaseShowcase";
+import { listMusicians, listReleases, releaseView } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Projects",
@@ -27,10 +27,13 @@ export default function ProjectsPage() {
       {releases.length > 0 && (
         <section aria-labelledby="releases-heading" className="mt-20">
           <h2 id="releases-heading" className="text-2xl font-bold tablet:text-4xl">New Releases</h2>
-          <ul className="mt-6 grid grid-cols-1 gap-4 mobile:grid-cols-2 tablet:grid-cols-3 laptop:grid-cols-4">
+          <ul className="mt-6 grid grid-cols-1 gap-4 laptop:grid-cols-2">
             {releases.map((r) => (
               <li key={`${r.artist}-${r.title}`}>
-                <ReleaseCard release={r} />
+                <ReleaseShowcase
+                  release={releaseView(r)}
+                  artistHref={r.musicianSlug ? `/projects/${r.musicianSlug}` : undefined}
+                />
               </li>
             ))}
           </ul>

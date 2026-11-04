@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Countdown, HideAfterFestival } from "@/components/FestivalStatus";
+import { HideAfterFestival } from "@/components/FestivalStatus";
 import Stamp from "@/components/Stamp";
 import UpcomingCard from "@/components/UpcomingCard";
 import { formatFestivalDates, getFestival, getStudio, listAboutSections, listUpcoming } from "@/lib/content";
@@ -72,11 +72,8 @@ export default function HomePage() {
           </h2>
           {festival.tagline && <p className="mt-2 font-hand text-3xl text-accent">{festival.tagline}</p>}
           <p className="mt-4 font-medium">
-            {formatFestivalDates(festival)} · {festival.venueName}
+            {formatFestivalDates(festival)}
           </p>
-          <div className="mt-2">
-            <Countdown startDate={festival.startDate} endDate={festival.endDate} />
-          </div>
           <div className="mt-6 flex flex-wrap items-center gap-8">
             <Link href="/festival" className="shape-blob bg-accent px-6 py-3 font-semibold text-bg hover:opacity-90">
               Festival details

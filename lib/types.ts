@@ -23,6 +23,16 @@ export type MusicianCredit = {
   workType?: WorkType;
   status?: "upcoming";
   link?: string;
+  /** Release date as YYYY-MM-DD (or YYYY). Shows "Date TBA" when missing. */
+  releaseDate?: string;
+  /** Square cover. Falls back to the matching entry in content/releases.ts. */
+  cover?: string;
+  /** Spotify link. Falls back to a placeholder until the real link is added. */
+  spotify?: string;
+  /** Used for the listen button when there is no Spotify link. */
+  appleMusic?: string;
+  /** "EP" shows a small tag; albums need nothing. */
+  kind?: "Album" | "EP";
 };
 
 export type Musician = {
@@ -32,6 +42,8 @@ export type Musician = {
   shortBio: string;
   bio: string;
   image?: string;
+  /** Extra photos. With more than one photo, the profile shows a slideshow. */
+  photos?: string[];
   /** Optional wordmark/logo image shown in place of the name on the profile page. */
   logo?: string;
   links: {
@@ -39,6 +51,8 @@ export type Musician = {
     spotify?: string;
     instagram?: string;
     youtube?: string;
+    appleMusic?: string;
+    soundcloud?: string;
   };
   featured: boolean;
   credits: MusicianCredit[];
@@ -92,6 +106,9 @@ export type Release = {
   link?: string;
   /** Square album cover, e.g. /images/releases/<file>.jpg */
   cover?: string;
+  /** Release date as YYYY-MM-DD (or YYYY). */
+  releaseDate?: string;
+  spotify?: string;
 };
 
 /** A card in the home page "Upcoming" row: a release, a concert, anything coming up. */

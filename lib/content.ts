@@ -130,3 +130,69 @@ export function formatDay(date: string): string {
     timeZone: "UTC",
   });
 }
+
+/** Placeholder until a real Spotify link is added to a release. */
+export const SPOTIFY_PLACEHOLDER = "https://open.spotify.com/";
+
+/** "2025-03-14" → "Mar 14, 2025"; "2025" → "2025"; missing → "Date TBA". */
+export function formatReleaseDate(date?: string): string {
+  if (!date) return "Date TBA";
+  return /^\d{4}-\d{2}-\d{2}$/.test(date) ? formatDay(date) : date;
+}
+
+export type ReleaseView = {
+  title: string;
+  artist?: string;
+  cover?: string;
+  date: string;
+  upcoming: boolean;
+  role?: string;
+  kind?: string;
+  /** Where the listen button goes. */
+  listenUrl: string;
+  listenOn: "spotify" | "apple";
+  listenIsPlaceholder: boolean;
+};
+
+const workLabels: Record<string, string> = {
+  recording: "Recording",
+  mixing: "Mixing",
+  mastering: "Mastering",
+  production: "Production",
+};
+
+/** A musician's credits, filled in with cover/date/Spotify from content/releases.ts when titles match. */
+export function releasesForMusician(m: Musician): ReleaseView[] {
+  return m.credits.map((c) => {
+    const r = releases.find((x) => x.title === c.title);
+    const spotify = c.spotify ?? r?.spotify ?? c.link ?? r?.link;
+    const apple = c.appleMusic;
+    const upcoming = c.status === "upcoming" || r?.status === "upcoming";
+    return {
+      title: c.title,
+      cover: c.cover ?? r?.cover,
+      date: upcoming && !(c.releaseDate ?? r?.releaseDate) ? "Coming soon" : formatReleaseDate(c.releaseDate ?? r?.releaseDate ?? (c.year ? String(c.year) : undefined)),
+      upcoming,
+      role: c.workType ? workLabels[c.workType] : undefined,
+      kind: c.kind === "EP" ? "EP" : undefined,
+      listenUrl: spotify ?? apple ?? SPOTIFY_PLACEHOLDER,
+      listenOn: !spotify && apple ? "apple" : "spotify",
+      listenIsPlaceholder: !spotify && !apple,
+    };
+  });
+}
+
+export function releaseView(r: Release): ReleaseView {
+  const spotify = r.spotify ?? r.link;
+  const upcoming = r.status === "upcoming";
+  return {
+    title: r.title,
+    artist: r.artist,
+    cover: r.cover,
+    date: upcoming && !r.releaseDate ? "Coming soon" : formatReleaseDate(r.releaseDate),
+    upcoming,
+    listenUrl: spotify ?? SPOTIFY_PLACEHOLDER,
+    listenOn: "spotify",
+    listenIsPlaceholder: !spotify,
+  };
+}

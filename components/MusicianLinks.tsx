@@ -5,6 +5,8 @@ const labels: Record<keyof Musician["links"], string> = {
   spotify: "Spotify",
   instagram: "Instagram",
   youtube: "YouTube",
+  appleMusic: "Apple Music",
+  soundcloud: "SoundCloud",
 };
 
 export default function MusicianLinks({ links }: { links: Musician["links"] }) {

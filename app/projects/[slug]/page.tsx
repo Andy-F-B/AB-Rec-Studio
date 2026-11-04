@@ -2,9 +2,10 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import CreditList from "@/components/CreditList";
 import MusicianLinks from "@/components/MusicianLinks";
-import { getFestival, getLineupForMusician, getMusicianBySlug, listMusicians, monogram } from "@/lib/content";
+import PhotoCarousel from "@/components/PhotoCarousel";
+import ReleaseShowcase from "@/components/ReleaseShowcase";
+import { getMusicianBySlug, listMusicians, monogram, releasesForMusician } from "@/lib/content";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -24,8 +25,8 @@ export default async function MusicianPage({ params }: Props) {
   const musician = getMusicianBySlug((await params).slug);
   if (!musician) notFound();
 
-  const playingFestival = getLineupForMusician(musician.slug).length > 0;
-  const festival = getFestival();
+  const photos = [musician.image, ...(musician.photos ?? [])].filter((p): p is string => Boolean(p));
+  const releases = releasesForMusician(musician);
   const paragraphs = musician.bio.split(/\n\s*\n/);
 
   return (
@@ -35,29 +36,19 @@ export default async function MusicianPage({ params }: Props) {
       </Link>
 
       <div className="mt-6 grid gap-8 tablet:grid-cols-[2fr_3fr] tablet:gap-12">
-        <div className="relative aspect-square overflow-hidden border border-line bg-surface">
-          {musician.image ? (
-            <Image
-              src={musician.image}
-              alt={musician.name}
-              fill
-              priority
-              sizes="(min-width: 1024px) 40vw, 100vw"
-              className="object-cover"
-            />
-          ) : (
+        {photos.length > 0 ? (
+          <PhotoCarousel photos={photos} alt={musician.name} />
+        ) : (
+          <div className="relative aspect-square overflow-hidden border border-line bg-surface">
             <div aria-hidden="true" className="flex h-full items-center justify-center text-7xl font-bold text-muted">
               {monogram(musician.name)}
             </div>
-          )}
-        </div>
+          </div>
+        )}
 
         <div>
-          {musician.genre && (
-            <p className="text-sm font-semibold uppercase tracking-widest text-accent">{musician.genre}</p>
-          )}
           {musician.logo ? (
-            <h1 className="mt-3">
+            <h1>
               <Image
                 src={musician.logo}
                 alt={musician.name}
@@ -68,16 +59,13 @@ export default async function MusicianPage({ params }: Props) {
               />
             </h1>
           ) : (
-            <h1 className="mt-2 text-3xl font-bold tablet:text-5xl">{musician.name}</h1>
+            <h1 className="text-3xl font-bold tablet:text-5xl">{musician.name}</h1>
           )}
 
-          {playingFestival && (
-            <Link
-              href="/festival"
-              className="mt-4 inline-flex items-center gap-2 bg-accent/15 px-4 py-1.5 text-sm font-semibold text-accent hover:bg-accent/25"
-            >
-              Playing at {festival.name} →
-            </Link>
+          {musician.genre && (
+            <p className="mt-3 inline-block border-t-2 border-accent pt-1.5 text-sm font-semibold uppercase tracking-widest text-accent">
+              {musician.genre}
+            </p>
           )}
 
           <div className="mt-6 space-y-4 text-muted">
@@ -90,13 +78,15 @@ export default async function MusicianPage({ params }: Props) {
             <MusicianLinks links={musician.links} />
           </div>
 
-          {musician.credits.length > 0 && (
-            <>
-              <h2 className="mt-10 text-xl font-bold">Releases</h2>
-              <div className="mt-4">
-                <CreditList credits={musician.credits} />
+          {releases.length > 0 && (
+            <section className="mt-10">
+              <h2 className="text-xl font-bold">Releases</h2>
+              <div className="mt-4 grid gap-4">
+                {releases.map((r) => (
+                  <ReleaseShowcase key={r.title} release={r} />
+                ))}
               </div>
-            </>
+            </section>
           )}
         </div>
       </div>

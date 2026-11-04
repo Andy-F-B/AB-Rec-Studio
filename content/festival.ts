@@ -21,7 +21,7 @@ export const festival: Festival = {
     { src: "/images/festival/backyard-trumpet.jpg", alt: "Trumpet solo at the Backyard Music Festival", width: 911, height: 1200 },
   ],
   // Lineup poster for the festival page. Drop the image in /public/images/festival/ and set the path.
-  lineupPoster: undefined,
+  lineupPoster: "/images/festival/lineup-poster-2026.jpg",
   // Used for "Playing at the festival" on profiles. `stage` groups the list.
   lineup: [
     { artistName: "CEONEO", musicianSlug: "ceoneo", stage: "Returning", order: 1 },
