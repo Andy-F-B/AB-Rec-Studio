@@ -41,3 +41,4 @@
 [2026-11-04 14:30] profiles: genre simplified to one italic serif line under the name (no pill)
 [2026-11-04 14:35] release cards: Album/EP text plain (not italic), same color as artist name
 [2026-11-04 14:40] festival: red push pin pinning the lineup poster at top middle (public/images/festival/pushpin.png, 200x150, shown at 64-80px)
+[2026-11-04 14:50] link previews: site URL falls back to Vercel's production domain (was localhost), so shared links show the logo preview image

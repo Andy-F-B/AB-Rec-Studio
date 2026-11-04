@@ -11,7 +11,13 @@ const caveat = Caveat({ variable: "--font-caveat", subsets: ["latin"], weight: "
 const pacifico = Pacifico({ variable: "--font-pacifico", subsets: ["latin"], weight: "400" });
 
 const studio = getStudio();
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
+// Full site address, used for link previews (the logo image). On Vercel this falls back to the
+// production domain automatically; set NEXT_PUBLIC_SITE_URL to override.
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ??
+  (process.env.VERCEL_PROJECT_PRODUCTION_URL
+    ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+    : "http://localhost:3000");
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
