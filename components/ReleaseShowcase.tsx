@@ -81,11 +81,7 @@ export default function ReleaseShowcase({
             {release.artist && release.kind && (
               <span aria-hidden="true"> - </span>
             )}
-            {release.kind && (
-              <span className="font-display italic text-accent">
-                {release.kind}
-              </span>
-            )}
+            {release.kind && <span>{release.kind}</span>}
           </p>
         )}
         {release.role && (

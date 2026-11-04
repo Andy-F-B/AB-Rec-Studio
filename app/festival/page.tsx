@@ -51,14 +51,25 @@ export default function FestivalPage() {
         <p className="font-hand text-3xl text-accent">Who&apos;s playing?</p>
         <h2 id="lineup-heading" className="mt-1 text-2xl font-bold tablet:text-3xl">The lineup</h2>
         {festival.lineupPoster ? (
-          <Image
-            src={festival.lineupPoster}
-            alt={`${festival.name} lineup poster`}
-            width={1080}
-            height={1350}
-            sizes="(min-width: 1024px) 640px, 100vw"
-            className="mx-auto mt-6 w-full max-w-xl -rotate-1 border border-line shadow-[0_18px_40px_-20px_rgb(15_31_43/0.5)]"
-          />
+          <div className="relative mx-auto mt-8 w-full max-w-xl -rotate-1">
+            <Image
+              src={festival.lineupPoster}
+              alt={`${festival.name} lineup poster`}
+              width={1080}
+              height={1350}
+              sizes="(min-width: 1024px) 640px, 100vw"
+              className="w-full border border-line shadow-[0_18px_40px_-20px_rgb(15_31_43/0.5)]"
+            />
+            {/* Push pin, top middle. The pin's point sits ~12px inside the poster edge. */}
+            <Image
+              src="/images/festival/pushpin.png"
+              alt=""
+              aria-hidden="true"
+              width={200}
+              height={150}
+              className="pointer-events-none absolute -top-2.5 left-[calc(50%-39px)] w-16 rotate-1 tablet:-top-3 tablet:left-[calc(50%-49px)] tablet:w-20"
+            />
+          </div>
         ) : (
           <div className="mx-auto mt-6 flex aspect-[4/5] w-full max-w-md -rotate-1 flex-col items-center justify-center border-2 border-dashed border-accent-bright bg-surface p-8">
             <p className="font-hand text-4xl text-accent">Poster coming soon</p>
