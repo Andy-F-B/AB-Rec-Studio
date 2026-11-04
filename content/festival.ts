@@ -4,27 +4,25 @@ export const festival: Festival = {
   name: "Backyard Music Festival at the Oasis",
   tagline: "Good music, good fun.",
   description:
-    "A free backyard festival of live music in Ocoee, Florida, hosted by The Oasis, a community ministry of Ocoee Oaks United Methodist Church.",
+    "Hosted by Alan and Andy Binau, in partnership with Ocoee Oaks United Methodist Church. Live music and great friendships, now in its second year.",
   startDate: "2026-11-21",
   endDate: "2026-11-21",
   venueName: "The Oasis",
-  venueAddress: "Ocoee Oaks United Methodist Church, Ocoee, Florida", // TODO: add street address if wanted
   admission: "free",
-  rsvpNote: "Free entry. Start time to be announced.",
+  rsvpNote: "Starts around 2PM.",
   timeZone: "America/New_York",
   faq: [
-    { q: "Is it free?", a: "Yes. Entry is free for everyone. No ticket needed, just show up." },
-    { q: "What time does it start?", a: "Start time is still to be announced. Check back here soon." },
-    {
-      q: "Who is hosting?",
-      a: "The Oasis, a community ministry of Ocoee Oaks United Methodist Church.",
-    },
+    { q: "Is it free?", a: "I sure hope so!" },
+    { q: "What time does it start?", a: "We're musicians, we're always late.... around 2PM!" },
+    { q: "Who is hosting?", a: "Alan Binau." },
   ],
   photos: [
     { src: "/images/festival/backyard-band.jpg", alt: "A band playing under the tent at the Backyard Music Festival", width: 1200, height: 1019 },
     { src: "/images/festival/backyard-trumpet.jpg", alt: "Trumpet solo at the Backyard Music Festival", width: 911, height: 1200 },
   ],
-  // `stage` is used to group the lineup.
+  // Lineup poster for the festival page. Drop the image in /public/images/festival/ and set the path.
+  lineupPoster: undefined,
+  // Used for "Playing at the festival" on profiles. `stage` groups the list.
   lineup: [
     { artistName: "CEONEO", musicianSlug: "ceoneo", stage: "Returning", order: 1 },
     { artistName: "Benzen & Binau", musicianSlug: "benzen-and-binau", stage: "Returning", order: 2 },

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Countdown, HideAfterFestival } from "@/components/FestivalStatus";
+import Stamp from "@/components/Stamp";
 import UpcomingCard from "@/components/UpcomingCard";
 import { formatFestivalDates, getFestival, getStudio, listAboutSections, listUpcoming } from "@/lib/content";
 
@@ -25,7 +26,7 @@ export default function HomePage() {
           </h1>
           <p className="mt-5 max-w-2xl text-lg text-muted">{studio.tagline}</p>
           <div className="mt-8 flex flex-wrap gap-3">
-            <Link href="/festival" className="bg-accent px-5 py-3 font-semibold text-bg hover:opacity-90">
+            <Link href="/festival" className="shape-blob bg-accent px-6 py-3 font-semibold text-bg hover:opacity-90">
               Backyard Festival at the Oasis
             </Link>
             <Link href="/projects" className="border border-line px-5 py-3 font-semibold text-fg hover:border-accent">
@@ -76,12 +77,12 @@ export default function HomePage() {
           <div className="mt-2">
             <Countdown startDate={festival.startDate} endDate={festival.endDate} />
           </div>
-          <Link
-            href="/festival"
-            className="mt-6 inline-block bg-accent px-5 py-3 font-semibold text-bg hover:opacity-90"
-          >
-            Festival details
-          </Link>
+          <div className="mt-6 flex flex-wrap items-center gap-8">
+            <Link href="/festival" className="shape-blob bg-accent px-6 py-3 font-semibold text-bg hover:opacity-90">
+              Festival details
+            </Link>
+            <Stamp />
+          </div>
           </div>
           {festival.photos?.[0] && (
             <div className="relative aspect-[4/3] tablet:aspect-auto">
@@ -100,11 +101,10 @@ export default function HomePage() {
       {/* Background, summarised (full text stays in content/about.ts) */}
       {story && (
         <section id="background" aria-labelledby="background-heading" className="scroll-mt-24 py-16">
-          <p className="text-sm font-semibold uppercase tracking-widest text-accent">Background</p>
-          <h2 id="background-heading" className="mt-2 text-2xl font-bold tablet:text-3xl">
+          <h2 id="background-heading" className="font-logo text-4xl font-normal text-accent tablet:text-5xl">
             {story.title}
           </h2>
-          <div className="mt-4 grid items-start gap-8 tablet:grid-cols-[3fr_2fr]">
+          <div className="mt-6 grid items-start gap-8 tablet:grid-cols-[3fr_2fr]">
             <div className="max-w-3xl space-y-4 text-muted">
               {paragraphs(story.body).map((p, i) => (
                 <p key={i}>{p}</p>
@@ -127,24 +127,31 @@ export default function HomePage() {
           </div>
 
           {people.length > 0 && (
-            <div className="mt-10 grid gap-4 tablet:grid-cols-2">
+            <div className="mt-12 grid gap-6 tablet:grid-cols-2">
               {people.map((p) => (
-                <div key={p.id} className="flex flex-col gap-5 border border-line bg-surface p-6 mobile:flex-row">
+                <article key={p.id} className="overflow-hidden border border-line border-t-4 border-t-accent-bright bg-surface">
                   {p.image && (
-                    <Image
-                      src={p.image}
-                      alt={p.title}
-                      width={160}
-                      height={160}
-                      className="size-32 shrink-0 object-cover mobile:size-36"
-                    />
+                    <div className="relative aspect-[4/3] bg-line">
+                      <Image
+                        src={p.image}
+                        alt={p.title}
+                        fill
+                        sizes="(min-width: 1024px) 45vw, 100vw"
+                        className="object-cover object-[50%_30%]"
+                      />
+                      {p.subtitle && (
+                        <span className="absolute bottom-0 left-0 bg-accent px-3 py-1 text-xs font-bold uppercase tracking-wide text-bg">
+                          {p.subtitle.split("·")[0].trim()}
+                        </span>
+                      )}
+                    </div>
                   )}
-                  <div>
-                    <h3 className="text-xl">{p.title}</h3>
-                    {p.subtitle && <p className="mt-1 text-sm font-medium text-accent">{p.subtitle}</p>}
+                  <div className="p-6">
+                    <h3 className="font-logo text-3xl font-normal text-accent">{p.title}</h3>
+                    {p.subtitle && <p className="mt-1 text-sm font-medium text-muted">{p.subtitle}</p>}
                     <p className="mt-3 text-muted">{paragraphs(p.body)[0]}</p>
                   </div>
-                </div>
+                </article>
               ))}
             </div>
           )}

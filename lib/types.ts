@@ -32,6 +32,8 @@ export type Musician = {
   shortBio: string;
   bio: string;
   image?: string;
+  /** Optional wordmark/logo image shown in place of the name on the profile page. */
+  logo?: string;
   links: {
     website?: string;
     spotify?: string;
@@ -76,6 +78,8 @@ export type Festival = {
   /** IANA time zone the festival runs in, e.g. "America/New_York". Used to show lineup times. */
   timeZone: string;
   faq: { q: string; a: string }[];
+  /** Lineup poster image (portrait), shown on the festival page. */
+  lineupPoster?: string;
   lineup: LineupSlot[];
 };
 
@@ -86,6 +90,8 @@ export type Release = {
   musicianSlug?: string;
   status: "upcoming" | "recent";
   link?: string;
+  /** Square album cover, e.g. /images/releases/<file>.jpg */
+  cover?: string;
 };
 
 /** A card in the home page "Upcoming" row: a release, a concert, anything coming up. */

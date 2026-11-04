@@ -27,4 +27,11 @@ export const upcoming: UpcomingItem[] = [
     image: "/images/upcoming/backyard-festival.jpg",
     href: "/festival",
   },
+  {
+    title: "New Gravis Pars album",
+    kind: "Release",
+    artist: "Gravis Pars",
+    image: "/images/upcoming/gravis-pars-album.jpg",
+    href: "/projects/gravis-pars",
+  },
 ];

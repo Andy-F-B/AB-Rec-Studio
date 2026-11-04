@@ -10,8 +10,8 @@ import { isActive, navItems } from "@/lib/nav";
 function navClass(highlight: boolean | undefined, active: boolean): string {
   if (highlight) {
     return active
-      ? "bg-accent font-semibold text-bg"
-      : "border border-accent-bright bg-accent-bright/20 font-semibold text-accent hover:bg-accent hover:text-bg";
+      ? "shape-blob bg-accent font-semibold text-bg"
+      : "shape-blob border-2 border-accent-bright bg-accent-bright/20 font-semibold text-accent hover:bg-accent hover:text-bg";
   }
   return active ? "bg-surface text-accent" : "text-muted hover:text-fg";
 }

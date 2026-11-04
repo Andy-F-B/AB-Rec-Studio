@@ -56,7 +56,20 @@ export default async function MusicianPage({ params }: Props) {
           {musician.genre && (
             <p className="text-sm font-semibold uppercase tracking-widest text-accent">{musician.genre}</p>
           )}
-          <h1 className="mt-2 text-3xl font-bold tablet:text-5xl">{musician.name}</h1>
+          {musician.logo ? (
+            <h1 className="mt-3">
+              <Image
+                src={musician.logo}
+                alt={musician.name}
+                width={1360}
+                height={820}
+                priority
+                className="w-56 tablet:w-72"
+              />
+            </h1>
+          ) : (
+            <h1 className="mt-2 text-3xl font-bold tablet:text-5xl">{musician.name}</h1>
+          )}
 
           {playingFestival && (
             <Link

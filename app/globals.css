@@ -85,3 +85,26 @@ button {
     display: inline-block;
   }
 }
+
+/* Organic, hand-drawn looking pill for the festival buttons. */
+.shape-blob {
+  border-radius: 255px 18px 225px 18px / 18px 225px 18px 255px;
+}
+
+/* Rubber stamp ("Free entry (of course)"). */
+.stamp {
+  display: inline-block;
+  transform: rotate(-9deg);
+  border: 3px double #c8102e;
+  outline: 2px solid #c8102e;
+  outline-offset: 3px;
+  padding: 0.35rem 0.9rem 0.3rem;
+  color: #c8102e;
+  text-align: center;
+  line-height: 1;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  opacity: 0.88;
+  mix-blend-mode: multiply;
+}
