@@ -4,7 +4,7 @@ export const festival: Festival = {
   name: "Backyard Music Festival at the Oasis",
   tagline: "Good music, good fun.",
   description:
-    "Hosted by Alan and Andy Binau, in partnership with Ocoee Oaks United Methodist Church. Live music and great friendships, now in its second year.",
+    "Hosted by Alan and Andy Binau, in partnership with Ocoee Oaks United Methodist Church. Live music and great friendships, now in its second year. Starts around 2PM.",
   startDate: "2026-11-21",
   endDate: "2026-11-21",
   venueName: "The Oasis",

@@ -24,7 +24,6 @@ export default function FestivalPage() {
           <h1 className="text-4xl font-bold tracking-tight tablet:max-w-[80%] tablet:text-6xl">{festival.name}</h1>
           {festival.tagline && <p className="mt-3 font-hand text-4xl text-accent">{festival.tagline}</p>}
           <p className="mt-6 text-xl font-semibold">{formatFestivalDates(festival)}</p>
-          {festival.rsvpNote && <p className="mt-6 text-muted">{festival.rsvpNote}</p>}
         </div>
       </section>
 

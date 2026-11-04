@@ -63,7 +63,8 @@ export default async function MusicianPage({ params }: Props) {
           )}
 
           {musician.genre && (
-            <p className="mt-3 inline-block border-t-2 border-accent pt-1.5 text-sm font-semibold uppercase tracking-widest text-accent">
+            <p className="mt-3 inline-flex items-center gap-2 rounded-full border border-accent/30 bg-surface py-1 pl-2.5 pr-3.5 font-display text-sm italic text-accent">
+              <span aria-hidden="true" className="h-1.5 w-1.5 rounded-full bg-accent-bright" />
               {musician.genre}
             </p>
           )}

@@ -136,16 +136,23 @@ export default function HomePage() {
                         sizes="(min-width: 1024px) 45vw, 100vw"
                         className="object-cover object-[50%_30%]"
                       />
-                      {p.subtitle && (
-                        <span className="absolute bottom-0 left-0 bg-accent px-3 py-1 text-xs font-bold uppercase tracking-wide text-bg">
-                          {p.subtitle.split("·")[0].trim()}
-                        </span>
-                      )}
                     </div>
                   )}
                   <div className="p-6">
                     <h3 className="font-logo text-3xl font-normal text-accent">{p.title}</h3>
-                    {p.subtitle && <p className="mt-1 text-sm font-medium text-muted">{p.subtitle}</p>}
+                    {p.subtitle && (
+                      <ul aria-label="Roles" className="mt-3 flex flex-wrap gap-2">
+                        {p.subtitle.split("·").map((role, i) => (
+                          <li
+                            key={role}
+                            className="inline-flex items-center gap-2 rounded-full border border-accent/30 bg-bg py-0.5 pl-2.5 pr-3 font-display text-sm italic text-accent"
+                          >
+                            {i === 0 && <span aria-hidden="true" className="h-1.5 w-1.5 rounded-full bg-accent-bright" />}
+                            {role.trim()}
+                          </li>
+                        ))}
+                      </ul>
+                    )}
                     <p className="mt-3 text-muted">{paragraphs(p.body)[0]}</p>
                   </div>
                 </article>

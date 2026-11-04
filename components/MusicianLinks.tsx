@@ -22,7 +22,7 @@ export default function MusicianLinks({ links }: { links: Musician["links"] }) {
             href={i.href}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block border border-line px-4 py-2 text-sm font-medium hover:border-accent hover:text-accent"
+            className="shape-blob inline-block border-2 border-line bg-bg px-4 py-2 text-sm font-medium transition-colors hover:border-accent-bright hover:bg-accent-bright/10 hover:text-accent"
           >
             {i.label}
           </a>

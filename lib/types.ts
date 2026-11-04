@@ -31,7 +31,7 @@ export type MusicianCredit = {
   spotify?: string;
   /** Used for the listen button when there is no Spotify link. */
   appleMusic?: string;
-  /** "EP" shows a small tag; albums need nothing. */
+  /** Shown as a small label above the title. Defaults to "Album". */
   kind?: "Album" | "EP";
 };
 
@@ -109,6 +109,8 @@ export type Release = {
   /** Release date as YYYY-MM-DD (or YYYY). */
   releaseDate?: string;
   spotify?: string;
+  /** Defaults to "Album". */
+  kind?: "Album" | "EP";
 };
 
 /** A card in the home page "Upcoming" row: a release, a concert, anything coming up. */

@@ -30,3 +30,9 @@
 [2026-11-04 05:25] research: ai/research/album-releases.md (albums + streaming links per project artist, for later site update)
 [2026-11-04 06:25] profiles: added researched albums (CEONEO 4, Benzen & Binau 2, Byorn Gold 4 w/ Spotify, Alan Binau Farvel Danmark EP w/ Apple Music), artist links (website/Spotify/Instagram/YouTube/Apple Music), EP tag, Apple Music button
 [2026-11-04 06:35] festival: lineup poster added (SVG rendered to public/images/festival/lineup-poster-2026.jpg, 1440x1800; the 90MB SVG was too heavy for the web)
+[2026-11-04 13:40] Gravis Pars: new album cover (name bottom-left) as profile image, gravis-pars-cover-v2.jpg
+[2026-11-04 13:50] release cards: "Released <date>" in normal case under the cover ("Release date TBA" when unknown), mobile Spotify button shortened; genre restyled as a pill with dot, italic serif
+[2026-11-04 14:00] release cards: Album/EP label above every title (line + italic serif); Projects: genre chips replaced by small Sort (Featured, A–Z, Z–A, Genre) and Genre dropdowns
+[2026-11-04 14:05] home: Alan/Andy role line replaced with italic serif role pills (matches genre tag); uppercase badge on photo removed
+[2026-11-04 14:10] profiles: link buttons (Website, Spotify, Instagram…) use the hand-drawn festival button shape, same colors
+[2026-11-04 14:15] festival page: start time removed from top banner, added to end of About text ("Starts around 2PM.")

@@ -58,7 +58,7 @@ export const musicians: Musician[] = [
   },
   {
     slug: "gravis-pars",
-    image: "/images/musicians/gravis-pars-cover.jpg", // upcoming album cover, for now
+    image: "/images/musicians/gravis-pars-cover-v2.jpg", // upcoming album cover, for now
     photos: ["/images/musicians/gravis-pars.jpg"],
     logo: "/images/musicians/gravis-pars-logo.svg",
     name: "Gravis Pars",
