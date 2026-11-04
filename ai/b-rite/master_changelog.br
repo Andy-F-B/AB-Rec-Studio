@@ -36,3 +36,6 @@
 [2026-11-04 14:05] home: Alan/Andy role line replaced with italic serif role pills (matches genre tag); uppercase badge on photo removed
 [2026-11-04 14:10] profiles: link buttons (Website, Spotify, Instagram…) use the hand-drawn festival button shape, same colors
 [2026-11-04 14:15] festival page: start time removed from top banner, added to end of About text ("Starts around 2PM.")
+[2026-11-04 14:20] home: Alan/Andy roles back to one simple line, comma-separated, italic serif accent
+[2026-11-04 14:25] release cards: Album/EP moved next to artist name under the title ("CEONEO - Album"); profile cards now show the artist name too
+[2026-11-04 14:30] profiles: genre simplified to one italic serif line under the name (no pill)

@@ -170,6 +170,7 @@ export function releasesForMusician(m: Musician): ReleaseView[] {
     const upcoming = c.status === "upcoming" || r?.status === "upcoming";
     return {
       title: c.title,
+      artist: m.name,
       cover: c.cover ?? r?.cover,
       date: upcoming && !(c.releaseDate ?? r?.releaseDate) ? "Coming soon" : formatReleaseDate(c.releaseDate ?? r?.releaseDate ?? (c.year ? String(c.year) : undefined)),
       upcoming,

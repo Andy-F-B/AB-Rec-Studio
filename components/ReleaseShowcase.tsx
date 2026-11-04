@@ -65,26 +65,29 @@ export default function ReleaseShowcase({
 
       {/* Info */}
       <div className="flex min-w-0 flex-1 flex-col">
-        {release.kind && (
-          <p className="mb-1.5 flex items-center gap-2 text-xs font-medium text-accent">
-            <span aria-hidden="true" className="h-px w-5 bg-accent-bright" />
-            <span className="font-display italic">{release.kind}</span>
-          </p>
-        )}
         <h3 className="font-display text-xl font-bold leading-tight tablet:text-2xl">
           {release.title}
         </h3>
-        {release.artist &&
-          (artistHref ? (
-            <Link
-              href={artistHref}
-              className="mt-0.5 text-sm text-muted hover:text-accent"
-            >
-              {release.artist}
-            </Link>
-          ) : (
-            <p className="mt-0.5 text-sm text-muted">{release.artist}</p>
-          ))}
+        {(release.artist || release.kind) && (
+          <p className="mt-1 text-sm text-muted">
+            {release.artist &&
+              (artistHref ? (
+                <Link href={artistHref} className="hover:text-accent">
+                  {release.artist}
+                </Link>
+              ) : (
+                release.artist
+              ))}
+            {release.artist && release.kind && (
+              <span aria-hidden="true"> - </span>
+            )}
+            {release.kind && (
+              <span className="font-display italic text-accent">
+                {release.kind}
+              </span>
+            )}
+          </p>
+        )}
         {release.role && (
           <span className="mt-2 w-fit bg-white px-2.5 py-0.5 text-xs font-medium text-muted">
             {release.role}

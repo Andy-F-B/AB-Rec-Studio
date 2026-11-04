@@ -141,17 +141,12 @@ export default function HomePage() {
                   <div className="p-6">
                     <h3 className="font-logo text-3xl font-normal text-accent">{p.title}</h3>
                     {p.subtitle && (
-                      <ul aria-label="Roles" className="mt-3 flex flex-wrap gap-2">
-                        {p.subtitle.split("·").map((role, i) => (
-                          <li
-                            key={role}
-                            className="inline-flex items-center gap-2 rounded-full border border-accent/30 bg-bg py-0.5 pl-2.5 pr-3 font-display text-sm italic text-accent"
-                          >
-                            {i === 0 && <span aria-hidden="true" className="h-1.5 w-1.5 rounded-full bg-accent-bright" />}
-                            {role.trim()}
-                          </li>
-                        ))}
-                      </ul>
+                      <p className="mt-1 font-display text-lg italic text-accent">
+                        {p.subtitle
+                          .split("·")
+                          .map((r) => r.trim())
+                          .join(", ")}
+                      </p>
                     )}
                     <p className="mt-3 text-muted">{paragraphs(p.body)[0]}</p>
                   </div>
